@@ -93,6 +93,15 @@ class BibliotecaDB():
     self.livro = input('Titulo do livro: ')
     self.autor = input('Autor: ')
     self.data_saida = datetime.datetime.now()
+    
+    """
+      se quiser inserir a data ao inves da data automatica atual
+      
+      data = datetime.datetime.now().isoformat(" ")
+      self.data_saida = input('Insira data de Registro (%s): ' % data) or data
+      
+      este formato pedirá a data, se não for especificada uma, sera usada a data atual.
+                                                                                       """
 
     try:
       self.db.cursor.execute("""
