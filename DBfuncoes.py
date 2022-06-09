@@ -179,14 +179,10 @@ class BibliotecaDB():
 
     except ValueError:
       return None
-
-  def ler_registro(self):
-
-      sql = 'SELECT * FROM registro ORDER BY '
-      r = self.db.cursor.execute(sql)
-      return r.fetchall()
-    
-  def imprimir_registro(self):
-    lista = self.ler_registro()
-    for c in lista:
-      print(c)
+  def imprimir_registro(self, prontuario):
+    """
+        imprime a consulta realizada
+                                      """
+    r = self.db.cursor.execute('SELECT * FROM registro WHERE prontuario = ?', (prontuario, ))
+    print(r.fetchall())
+    return r
