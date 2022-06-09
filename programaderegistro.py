@@ -24,10 +24,12 @@ if prompt == '1':
 
 
 elif prompt == '2':
+  
   while registrar:
+
     muda = input('\nInsira um prontuario valido: ')
-    if muda:
-      c.imprimir_registro()
+    
+    if muda in c.imprimir_registro(muda):
       registrar = False
 
     muda1 = input('\nInsira o ID para atualizar: ')
